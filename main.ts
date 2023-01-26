@@ -1,5 +1,6 @@
 sprites.onOverlap(SpriteKind.Guard, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeScoreBy(1)
+    music.baDing.play()
     Namor.setPosition(148, 2)
     Riri.setPosition(22, 73)
     Okoye.setPosition(100, 95)
@@ -14,6 +15,7 @@ info.onScore(20, function () {
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
+    music.pewPew.play()
     Namor.setPosition(148, 2)
     Riri.setPosition(22, 73)
     Okoye.setPosition(100, 95)
