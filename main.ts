@@ -1,6 +1,8 @@
 sprites.onOverlap(SpriteKind.Guard, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     Namor.setPosition(148, 2)
+    Riri.setPosition(22, 73)
+    Okoye.setPosition(100, 95)
 })
 info.onScore(20, function () {
     Namor.destroy()
@@ -13,7 +15,11 @@ info.onScore(20, function () {
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
     Namor.setPosition(148, 2)
+    Riri.setPosition(22, 73)
+    Okoye.setPosition(100, 95)
 })
+let Okoye: Sprite = null
+let Riri: Sprite = null
 let Namor: Sprite = null
 let Shuri: Sprite = null
 game.showLongText("Help Shuri, Okoye and Riri escape Namor. (Press the \\\"A\\\" button to go to next screen).", DialogLayout.Full)
@@ -27,8 +33,8 @@ info.setLife(2)
 Namor = sprites.create(assets.image`namor`, SpriteKind.Enemy)
 Namor.setPosition(148, 2)
 Namor.follow(Shuri, 30)
-let Riri = sprites.create(assets.image`riri`, SpriteKind.Guard)
-let Okoye = sprites.create(assets.image`okoye`, SpriteKind.Guard)
+Riri = sprites.create(assets.image`riri`, SpriteKind.Guard)
+Okoye = sprites.create(assets.image`okoye`, SpriteKind.Guard)
 Riri.setPosition(22, 73)
 Okoye.setPosition(100, 95)
 controller.moveSprite(Riri, 34, -53)
